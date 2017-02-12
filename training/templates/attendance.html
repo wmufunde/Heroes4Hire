@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Attendance Form</h1>
+
+<form action="{% url 'trainings:attendance_signup' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+
+    <input type="submit" value="Submit"/>
+</form>
+{% endblock %}

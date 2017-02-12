@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Hero List</h1>
+
+<div>
+    {% for hero in heroes %}
+    <p>
+        <a href="/heroes/profile/{{hero.id}}/">{{ hero.codename }}</a>
+        <a href="{% url 'heroes:hero_update' hero.id %}">Update</a>
+        <a href="{% url 'heroes:hero_delete' hero.id %}">Delete</a>
+    </p>
+    {% endfor %}
+</div>
+
+{% endblock %}

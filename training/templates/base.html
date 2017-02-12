@@ -1,0 +1,107 @@
+
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+      body{
+          padding-top:60px;
+      }
+  </style>
+    {% block js %}
+    {% endblock %}
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Heroes 4 Hire</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Signup <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'heroes:heroes_signup' %}">Heroes Signup</a></li>
+                <li><a href="{% url 'missions:customer_signup' %}">Customer Signup</a></li>
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Heroes <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'heroes:team_signup' %}">Team Signup</a></li>
+                <li><a href="{% url 'heroes:team_log' %}">Current Team Log</a></li>
+                
+                <li><a href="{% url 'heroes:status_log' %}">Status Log</a></li>
+                <li><a href="{% url 'heroes:hero_list' %}">Heroes List</a></li>
+              </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Missions<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'missions:mission_signup' %}">Missions Log</a></li>
+                <li><a href="{% url 'missions:report_signup' %}">Report Log</a></li>
+               
+              </ul>
+            </li>
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Customer <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'missions:customer_list' %}">Customer List</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="{% url 'trainings:class_signup' %}">Classes Log</a></li>
+                <li><a href="{% url 'trainings:attendance_signup' %}">Attendance Log</a></li>
+                <li><a href="{% url 'trainings:room_signup' %}">Room Signup</a></li>
+                <li><a href="{% url 'trainings:trainer_signup' %}">Trainer Signup</a></li>
+               
+              </ul>
+            </li>
+            
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+           <li><a href="{% url 'profile' %}">My Profile</a></li>
+                <li><a href="/accounts/logout/">Logout</a></li>
+               
+            
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+<div class="container">
+{% block content %}
+{% endblock %}
+    </div>
+</body>
+
+
+</html>

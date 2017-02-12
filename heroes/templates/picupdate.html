@@ -1,0 +1,20 @@
+{% load staticfiles %}
+
+
+<head>
+    <title>Status Form</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  
+</head>
+
+<body>
+<h1> Picture Update Form</h1>
+
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_table }}
+
+
+    <input type="submit" value="Submit"/>
+</form>
+</body>

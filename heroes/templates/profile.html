@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<h1>{{ object.codename }}</h1>
+{% if object.profilePic %}
+<img src={{ object.profilePic.url }} />
+{% endif %}
+
+
+<hr/>
+
+
+<h2>Stats</h2>
+
+
+{% for stats in object.stats_set.all %}
+  
+  <h3>Height: {{ stats.height }}</h3>
+  <h3>Weight: {{ stats.weight }}</h3>
+  <h3>Powers: {{stats.powers }}</h3>
+  <h3>Durability: {{ stats.durability }}</h3>
+  <h3>Strength: {{ stats.strength }}</h3>
+  <h3>Speed: {{ stats.speed}}</h3>
+  
+{% endfor %}
+
+<h2>Status</h2>
+
+{% for status in object.status_set.all %}
+
+    <h3>{{ status.team }}</h3>
+    <h3>{{status.missionID.description}}</h3>
+    <h3>{{status.missionID.locations}}</h3>
+
+
+{% endfor %}
+
+
+<a href="{% url 'heroes:pic_update' object.id %}">Update Pic</a>
+
+
+{% endblock %}

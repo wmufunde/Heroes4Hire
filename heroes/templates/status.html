@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Status Form</h1>
+
+<form action="." method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_table }}
+
+
+    <input type="submit" value="Submit"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %} Heroes Signup {% endblock %}
+
+{% block js %}
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="{% static 'js/jquery.formset.js' %}"></script>
+    <script>
+        $(function() {
+            $(".stats_form").formset();
+            $(".alias_form").formset();
+        })
+    </script>
+
+{%endblock %}
+{% block content %}
+ 
+
+<h1> Hero Form</h1>
+
+<form action="{% url 'heroes:heroes_signup' %}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_table }}
+    
+    <fieldset>
+        <legend>Alias</legend>
+        {{ alias_form.management_form }}
+        {{ alias_form.non_form_errors }}
+        {% for form in alias_form %}
+            {{ form.id }}
+            <div class="alias_form">
+                {{ form.as_p }}
+            </div>
+        {% endfor %}
+    </fieldset>
+
+    <fieldset>
+        <legend>Stats</legend>
+        {{ stats_form.management_form }}
+        {{ stats_form.non_form_errors }}
+        {% for form in stats_form %}
+            {{ form.id }}
+            <div class="stats_form">
+                {{ form.as_p }}
+            </div>
+        {% endfor %}
+    </fieldset>
+
+    <input type="submit" value="Submit"/>
+</form>
+
+
+{% endblock %}
