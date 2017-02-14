@@ -4,8 +4,6 @@ import environ
 
 env = environ.Env()
 
-SECRET_KEY = env('DJANGO_SECRET_KEY')
-
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 INSTALLED_APPS += ('djangosecure', )
