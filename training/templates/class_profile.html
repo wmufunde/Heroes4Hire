@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<h1>Class Profile</h1>
+
+
+<h2>Room</h2>
+{{object.roomID}}
+
+<hr>
+Trainer: 
+
+{% for trainer in object.trainer_set.all %} 
+{{object.trainerID}}
+{{object.firstName}}
+{{object.surname}}
+
+{% endfor %}
+
+<br>
+{{ object.description }}
+
+  
+
+
+{% endblock %}
+       

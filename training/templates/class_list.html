@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Class List</h1>
+
+<hr>
+<h4>Type of Class Key: </h4><br>
+AC: Armed Combat
+UC: Unarmed Combat
+P: Piloting
+O: Other
+
+<hr>
+
+<div>
+    {% for classTraining in classTrainings %}
+    <p>
+        <a href="/training/class_profile/{{classTraining.id}}/">{{classTraining.className}}</a>
+        Type of Class: {{classTraining.typeofClass}}
+        
+        <a href="{% url 'trainings:class_update' classTraining.id %}">Update</a>
+       <a href="{% url 'trainings:class_delete' classTraining.id %}">Delete</a>
+        
+    
+    </p>
+       
+    {% endfor %}
+</div>
+
+{% endblock %}

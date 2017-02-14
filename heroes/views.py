@@ -4,7 +4,7 @@ from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.template import RequestContext
 
-from heroes.models import Hero, Status, Stats
+from heroes.models import Hero, Status, Stats, Team
 
 from heroes.forms.heroes import HeroesForm, StatsFormSet, AliasFormSet
 
@@ -81,6 +81,10 @@ class ProfileView(DetailView):
     template_name = 'profile.html'
     model = Hero
     
+class TeamProfileView(DetailView):
+    template_name = 'team_profile.html'
+    model = Team
+    
 class PicupdateView(UpdateView):
     template_name = 'picupdate.html'
     success_url = '/heroes/successcurrentteam'
@@ -142,3 +146,23 @@ def hero_list(request, template='hero_list.html'):
         'heroes': heroes,
     }
     return render_to_response(template, context)
+
+@login_required
+def team_list(request, template='team_list.html'):
+    teams = Team.objects.all()
+    context = {
+        'teams': teams,
+    }
+    return render_to_response(template, context)
+
+class TeamUpdateView(UpdateView):
+    template_name = 'team.html'
+    success_url = '/heroes/successcurrentteam'
+    model = Team
+    form_class = TeamForm
+    
+class TeamDeleteView(DeleteView):
+    template_name = 'team_confirm_delete.html'
+    model = Team
+    success_url = '/heroes/team_list'
+    

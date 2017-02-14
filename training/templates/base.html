@@ -50,7 +50,7 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Heroes <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="{% url 'heroes:team_signup' %}">Team Signup</a></li>
+                
                 <li><a href="{% url 'heroes:team_log' %}">Current Team Log</a></li>
                 
                 <li><a href="{% url 'heroes:status_log' %}">Status Log</a></li>
@@ -58,12 +58,22 @@
               </ul>
             </li>
             
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Teams<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+               <li><a href="{% url 'heroes:team_signup' %}">Team Signup</a></li>
+                <li><a href="{% url 'heroes:team_list' %}">Team List</a></li> 
+              </ul>
+            </li>
+            
             
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Missions<span class="caret"></span></a>
               <ul class="dropdown-menu">
+               
                 <li><a href="{% url 'missions:mission_signup' %}">Missions Log</a></li>
                 <li><a href="{% url 'missions:report_signup' %}">Report Log</a></li>
+                <li><a href="{% url 'missions:mission_list' %}">Missions List</a></li>
                
               </ul>
             </li>
@@ -80,9 +90,13 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Classes<span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="{% url 'trainings:class_signup' %}">Classes Log</a></li>
+                <li><a href="{% url 'trainings:class_list' %}">Classes List</a></li>
+               
                 <li><a href="{% url 'trainings:attendance_signup' %}">Attendance Log</a></li>
-                <li><a href="{% url 'trainings:room_signup' %}">Room Signup</a></li>
-                <li><a href="{% url 'trainings:trainer_signup' %}">Trainer Signup</a></li>
+                <li><a href="{% url 'trainings:room_signup' %}">Room Log</a></li>
+                <li><a href="{% url 'trainings:room_list' %}">Room List</a></li>
+                <li><a href="{% url 'trainings:trainer_signup' %}">Trainer Log</a></li>
+                <li><a href="{% url 'trainings:trainer_list' %}">Trainer List</a></li>
                
               </ul>
             </li>

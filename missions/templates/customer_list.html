@@ -4,13 +4,14 @@
 
 {% block content %}
 
-<h1> Hero List</h1>
+<h1> Customer List</h1>
 
 <div>
     {% for customer in customers %}
     <p>
         {{ customer.firstName }}, {{ customer.surname }}
         <a href="{% url 'missions:customer_update' customer.id %}">Update</a>
+        <a href="{% url 'missions:customer_delete' customer.id %}">Delete</a>
     
     </p>
     {% endfor %}

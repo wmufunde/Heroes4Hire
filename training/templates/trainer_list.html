@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Trainer List</h1>
+
+
+
+<div>
+    {% for trainer in trainers %}
+    <p>
+        <a href="/training/trainer_profile/{{trainer.id}}/">{{ trainer.firstName }} {{trainer.surname }}</a>
+        
+        <a href="{% url 'trainings:trainer_update' trainer.id %}">Update</a>
+       <a href="{% url 'trainings:trainer_delete' trainer.id %}">Delete</a>
+        
+        
+    
+    </p>
+       
+    {% endfor %}
+</div>
+
+{% endblock %}

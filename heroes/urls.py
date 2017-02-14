@@ -12,8 +12,12 @@ urlpatterns = [
     url(r'^profile/(?P<pk>\d+)/$', views.ProfileView.as_view(), name='profile_page'),
     url(r'^profileimgupdate/(?P<pk>\d+)/$', views.PicupdateView.as_view(), name='pic_update'),
     url(r'^hero_list/$', views.hero_list, name='hero_list'),
-    # URL for stats update
+    # URL for hero stats update
     url(r'^hero/(?P<pk>[0-9]+)/$',views.HeroesUpdateView.as_view(), name='hero_update'),
-    url(r'^hero/(?P<pk>[0-9]+)/delete/$',views.HeroesDeleteView.as_view(), name='hero_delete')
-
+    url(r'^hero/(?P<pk>[0-9]+)/delete/$',views.HeroesDeleteView.as_view(), name='hero_delete'),
+    url(r'^team_list/$', views.team_list, name='team_list'),
+    url(r'^team_profile/(?P<pk>\d+)/$', views.TeamProfileView.as_view(), name='team_profile'),
+    url(r'^hero/(?P<pk>[0-9]+)/$',views.HeroesUpdateView.as_view(), name='hero_update'),
+    url(r'^team/(?P<pk>[0-9]+)/$',views.TeamUpdateView.as_view(), name='team_update')
+    #url(r'^team/(?P<pk>[0-9]+)/delete/$',views.TeamDeleteView.as_view(), name='team_delete'),
 ]

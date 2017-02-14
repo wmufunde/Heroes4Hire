@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h2>Customer</h2>
+<h3>{{ object.customerID }}</h3>
+
+
+<h2>Description</h2>
+
+
+  <h3>{{ object.description }}</h3>
+  
+<h2>Locations</h2>  
+  <h3>{{ object.locations }}</h3>
+
+
+<h2>Difficulty</h2>
+    <h3>{{object.difficulty}}</h3>
+    
+
+{% endblock %}

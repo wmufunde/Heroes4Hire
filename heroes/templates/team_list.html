@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Team List</h1>
+
+<div>
+    {% for team in teams %}
+    <p>
+        <a href="/heroes/team_profile/{{team.id}}/">{{ team.name }}</a>
+        {{team.leader}}
+        
+        <a href="{% url 'heroes:team_update' team.id %}">Update</a>
+        <!-- I keep getting an error when I try adding a a Delete fucntion -->
+        
+    </p>
+       
+    {% endfor %}
+</div>
+
+{% endblock %}

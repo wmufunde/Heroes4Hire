@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+<h1>{{ object.name }}</h1>
+
+
+
+<hr/>
+
+
+<h2>Leader</h2>
+
+
+  <h3>{{ object.leader }}</h3>
+  
+<h2>Description</h2>  
+  <h3>{{ object.description }}</h3>
+
+
+
+
+<h2>Address</h2>
+    <h3>{{object.address}}</h3>
+    
+<h2> Members</h2>    
+    <h3>{{object.members}}</h3>
+
+
+
+
+{% endblock %}

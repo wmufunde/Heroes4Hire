@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Missions List</h1>
+
+<div>
+    {% for mission in missions %}
+    <p>
+        <a href="/missions/mission_profile/{{mission.id}}/">{{mission.description}}</a>
+        Difficulty: {{mission.difficulty}}
+        
+    
+    </p>
+       
+    {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+<h1> Room List</h1>
+
+
+<div>
+    {% for room in rooms %}
+    <p>
+       Room Name: {{room.roomName}}
+       
+       <a href="{% url 'trainings:room_update' room.id %}">Update</a>
+       <a href="{% url 'trainings:room_delete' room.id %}">Delete</a>
+        
+    
+    </p>
+       
+    {% endfor %}
+</div>
+
+{% endblock %}
