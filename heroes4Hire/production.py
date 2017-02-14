@@ -41,3 +41,6 @@ INSTALLED_APPS += ('gunicorn', )
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 DATABASES['default'] = env.db('DATABASE_URL')
+
+
+DEBUG=False
