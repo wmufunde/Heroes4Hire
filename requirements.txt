@@ -1,0 +1,12 @@
+django
+
+# Configuration
+django-enviro
+django-secure
+whitenoise
+
+# Images
+Pillow
+
+# Python-PostgreSQL Database Adapter
+psycopg2
