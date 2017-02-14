@@ -1,7 +1,7 @@
 from django.db import models
 from django.conf import settings
 
-# Create your models here.
+
 class Hero(models.Model):
     codename = models.CharField(max_length = 30)
     profilePic = models.ImageField(blank=True, ) #blank makes this optional
@@ -44,14 +44,7 @@ class Team(models.Model):
     
     def __str__(self):
         return str(self.name)
-        
-class Status(models.Model):
-    heroID = models.ForeignKey('Hero')
-    missionID = models.ForeignKey('missions.Mission', null = True, blank = True)
-    teamID = models.ForeignKey('Team', blank = True, null = True)
-        
-    def __str__(self):
-        return str(self.heroID, self.missionID, self.TeamID)
+
         
 class Alias(models.Model):
     heroID = models.ForeignKey('Hero')
