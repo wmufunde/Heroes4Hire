@@ -4,7 +4,7 @@ from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from django.template import RequestContext
 
-from heroes.models import Hero, Status, Stats
+from heroes.models import Hero, Stats
 
 from heroes.forms.heroes_form import HeroesForm, StatsFormSet, AliasFormSet
 

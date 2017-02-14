@@ -1,6 +1,9 @@
 from django.db import models
 
 # Create your models here.
+from heroes.models import Hero
+
+
 class Trainer(models.Model):
     firstName = models.CharField(max_length = 25)
     surname = models.CharField(max_length = 25)
@@ -18,8 +21,8 @@ class Room(models.Model):
         return str(self.roomName)
     
 class ClassTraining(models.Model):
-    TrainerID = models.ForeignKey('Trainer')
-    roomID = models.ForeignKey('Room')
+    TrainerID = models.ForeignKey(Trainer)
+    roomID = models.ForeignKey(Room)
     TRAINING_TYPE_CHOICES = (
     ('AC', 'Armed Combat'),
     ('UC', 'Unarmed Combat'),
@@ -34,9 +37,9 @@ class ClassTraining(models.Model):
         return '%s %s' %(self.className, self.typeofClass)
     
 class Attendance(models.Model):
-    heroID = models.ForeignKey('heroes.Hero') #initially heroesode
-    classID = models.ForeignKey('ClassTraining')
-    roomID = models.ForeignKey('Room')
+    heroID = models.ForeignKey(Hero) #initially heroesode
+    classID = models.ForeignKey(ClassTraining)
+    roomID = models.ForeignKey(Room)
     classDate = models.DateField()
     startTime = models.TimeField()
     endTime = models.TimeField()
@@ -45,9 +48,9 @@ class Attendance(models.Model):
         return str(self.heroID, self.classID, self.roomID)
     
 class ReportLog(models.Model):
-    classID = models.ForeignKey('ClassTraining')
-    heroID = models.ForeignKey('heroes.Hero')
-    TrainerID = models.ForeignKey('Trainer')
+    classID = models.ForeignKey(ClassTraining)
+    heroID = models.ForeignKey(Hero)
+    TrainerID = models.ForeignKey(Trainer)
     grade = models.CharField(max_length = 5)
     OUTCOME_CHOICES = (
     ('P', 'Pass'),
@@ -58,7 +61,3 @@ class ReportLog(models.Model):
     
     def __str__(self):
         return '%s %s %s %s' %(self.heroID, self.classID, self.grade, self.outcome)
-        
-    
-
-    
