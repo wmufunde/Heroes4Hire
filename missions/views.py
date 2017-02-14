@@ -1,10 +1,10 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response
 from django.views.generic.edit import FormView, UpdateView
+
 from missions.forms.customer import CustomerForm
 from missions.forms.mission import MissionForm
 from missions.forms.report import ReportForm
-
 from missions.models import Customer
 
 from django.contrib.auth.decorators import login_required

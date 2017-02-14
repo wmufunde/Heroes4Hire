@@ -6,7 +6,7 @@ from django.template import RequestContext
 
 from heroes.models import Hero, Status, Stats
 
-from heroes.forms.heroes import HeroesForm, StatsFormSet, AliasFormSet
+from heroes.forms.heroes_form import HeroesForm, StatsFormSet, AliasFormSet
 
 from heroes.forms.team import TeamForm
 from heroes.forms.status import StatusForm
