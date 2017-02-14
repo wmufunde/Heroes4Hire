@@ -1,7 +1,7 @@
 django
 
 # Configuration
-django-enviro
+django-environ
 django-secure
 whitenoise
 
