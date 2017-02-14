@@ -40,6 +40,8 @@ INSTALLED_APPS += ('gunicorn', )
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+DATABASES['default']['ENGINE'] = 'django.db.backends.postgresql'
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 DATABASES['default'] = env.db('DATABASE_URL')
 
 #DEBUG=False
