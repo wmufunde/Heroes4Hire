@@ -1,5 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, render_to_response
+
 from django.views.generic.edit import FormView, UpdateView, DeleteView
 from django.views.generic.detail import DetailView
 from missions.forms.customer import CustomerForm
@@ -8,8 +9,16 @@ from missions.forms.report import ReportForm
 
 from missions.models import Customer, Mission
 
+from django.views.generic.edit import FormView, UpdateView
+
+from missions.forms.customer import CustomerForm
+from missions.forms.mission import MissionForm
+from missions.forms.report import ReportForm
+from missions.models import Customer
+
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+# example
 
 class CustomerView(FormView):
     template_name = 'customer.html'
