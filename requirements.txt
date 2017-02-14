@@ -10,3 +10,8 @@ Pillow
 
 # Python-PostgreSQL Database Adapter
 psycopg2
+
+# WSGI Handler
+# ------------------------------------------------
+gevent
+gunicorn
