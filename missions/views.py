@@ -18,6 +18,7 @@ from missions.models import Customer
 
 from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
+# example
 
 class CustomerView(FormView):
     template_name = 'customer.html'
