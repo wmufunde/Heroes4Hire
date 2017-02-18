@@ -57,7 +57,7 @@ class Alias(models.Model):
     species = models.CharField(max_length = 40)
         
     def __str__(self):
-        return str(self.heroID, self.firstName, self.surname)
+        return str(self.firstName, self.surname)
 
 
         
