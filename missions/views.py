@@ -34,7 +34,7 @@ class CustomerView(FormView):
 class MissionView(FormView):
     template_name = 'mission.html'
     form_class = MissionForm
-    success_url = '/missions/mission'
+    success_url = '/training/success'
     
     def form_valid(self, form):
         form.save()
@@ -77,7 +77,7 @@ class CustomersDeleteView(DeleteView):
 def mission_list(request, template='mission_list.html'):
     missions = Mission.objects.all()
     context = {
-        'missions': missons,
+        'missions': missions,
     }
     return render_to_response(template, context)
 
