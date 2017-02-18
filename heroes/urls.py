@@ -18,6 +18,6 @@ urlpatterns = [
     url(r'^team_list/$', views.team_list, name='team_list'),
     url(r'^team_profile/(?P<pk>\d+)/$', views.TeamProfileView.as_view(), name='team_profile'),
     url(r'^hero/(?P<pk>[0-9]+)/$',views.HeroesUpdateView.as_view(), name='hero_update'),
-    url(r'^team/(?P<pk>[0-9]+)/$',views.TeamUpdateView.as_view(), name='team_update')
+    url(r'^team/(?P<pk>[0-9]+)/$',views.TeamUpdateView.as_view(), name='team_update'),
     url(r'^team/(?P<pk>[0-9]+)/delete/$',views.TeamDeleteView.as_view(), name='team_delete'),
 ]
