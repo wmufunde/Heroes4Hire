@@ -20,6 +20,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 from heroes import views as heroes_views
+from home import views as home_views
 
 
 urlpatterns = [
@@ -27,7 +28,7 @@ urlpatterns = [
     url('^accounts/', include('django.contrib.auth.urls')),
     
     url(r'^admin/', admin.site.urls),
-    url(r'^/', include('home.urls')),
+    url(r'^$', home_views.home_page),
     url(r'^heroes/', include('heroes.urls', namespace='heroes')),
     url(r'^training/', include('training.urls', namespace='trainings')),
     url(r'^missions/', include('missions.urls', namespace='missions')),
