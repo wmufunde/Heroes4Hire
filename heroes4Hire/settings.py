@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     #custom apps
     'heroes',
     'training',
-    'missions'
+    'missions',
+    'home'
 ]
 
 MIDDLEWARE = [

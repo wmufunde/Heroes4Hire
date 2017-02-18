@@ -27,6 +27,7 @@ urlpatterns = [
     url('^accounts/', include('django.contrib.auth.urls')),
     
     url(r'^admin/', admin.site.urls),
+    url(r'^/', include('home.urls'), namespace='home'),
     url(r'^heroes/', include('heroes.urls', namespace='heroes')),
     url(r'^training/', include('training.urls', namespace='trainings')),
     url(r'^missions/', include('missions.urls', namespace='missions')),
