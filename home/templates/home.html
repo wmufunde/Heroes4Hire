@@ -10,44 +10,83 @@
         <div class="overlay">
             <div class="content">
                 <h1>Welcome to <strong><span class="color">Heroes 4 Hire</span></strong></h1>
-                <p class="lead">When you have no one else to turn to we <strong>won't</strong> fail you></p>
-                <a href="#tf-about" class="fa fa-angle-down page-scroll"></a>
+                <p class="lead">When you have no one else to turn to we <strong>won't</strong> fail you</p>
+                <a href="#tf-team" class="fa fa-angle-down page-scroll"></a>
             </div>
         </div>
     </div>
 <! Home -->
 
 <div class = "instructions"> 
+
 <h2> Login Details</h2>
+   <br>
     <p>Guest login - </p>
     <p>username: guest </p>
     <p>password: Iamguest001 </p>
 
-    To Login, <a href="/accounts/logout/"> click here</a>.
-
+    To Login, <a href="/accounts/logout/"> click here</a>
+    
+<br><br>
 <h2>Instructions</h2>
+<br>
 
 <p> 
-Go to the Signup tab to signup a hero or a customer
+To signup a here go to: Signup --> Heroes Signup
+</p>
+
+<br>
+
+<p> To signup a customer go to: Signup --> Customer Signup</p>
+
+<p>To view the list of customers go to: Customers --> Customer List
+</p>
+
+<br>
+
+<p> To view the list of superheroes on our database go to: Heroes --> Heroes List
+</p>
+
+<br>
+
+<p> When a hero is completing a mission it is important to update their status. To do this go to: Heroes --> Status Log
+</p>
+
+<br>
+
+<p>
+When a hero changes what team they are in it is important to udate this information. To do this go to: Heroes --> Current Team Log
+</p> 
+
+<br>
+
+<p>
+    To add a new team go to: Teams --> Team Signup
 </p>
 
 <p>
-    Go to the Heroes tab to view the Heroes List, update the status of the hero, or update the details of the team they are in
+    To view the list of superhero team go to: Teams --> Team List
 </p>
-
+<br>
 <p>
-    Go to Teams tab to view the Team List, and add a new team
+    To add a mission go to: Missions --> Mission Login </p>
+    <p>
+        Go view the list of missions go to: Missions --> Missions List </p>
+        <p>
+    Once a mission is finished it is important that a report detailing how the mission went, and whether it was successful or not is completed. To do this go to: Missions --> Mission Report
 </p>
 
+<br>
 <p>
-    Go to Teams tab to add a new mission, view the mission list, and to declare a new report for a mission
-</p>
-
-<p> Go to the Customer tab to view the list of customers
-</p>
-
-<p>Go to the Classes tab to view the list of classes, add a new class, add attendance, add a new room, view the list of rooms, add a trainer, and view the list of trainers
-</p>
+Heroes need to keep themselves up to date so they must attend classes. To create a new class go to: Classes -> Classes Log
+    </p>
+<p> To view the list of classes go to: Classes -> Classes List </p>
+    <p>To add the attendances of heroes to a class go to: Classes -> Attendance Log </p>
+    <p> To add a room go to: Classes --> Room Log </p>
+    <p> To view the list of rooms go to: Classes --> Room List</p>
+    <p> To add a new trainer for the classes go to: Classes --> Trainer Log</p>
+    <p> To view the list of trainers go to: Classes --> Trainer List</p>
+    
 </div>
 
 
@@ -57,7 +96,7 @@ Go to the Signup tab to signup a hero or a customer
         <div class="overlay">
             <div class="container">
                 <div class="section-title center">
-                    <h2>Meet <strong>our team</strong></h2>
+                    <h2>Helpful<strong> Links</strong></h2>
                     <div class="line">
                         <hr>
                     </div>
@@ -66,45 +105,60 @@ Go to the Signup tab to signup a hero or a customer
                 <div id="team" class="owl-carousel owl-theme row">
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="img/team/01.jpg" alt="..." class="img-circle team-img">
+                            <a href = "{% url 'heroes:heroes_signup' %}"><img src="{% static 'img/icons/superman.png' %}" alt="..." class="img-circle team-img"></a>
                             <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                                <h3>Heroes Signup</h3>
+                                <p>This is where you can register your heroes. Be sure to complete all the fields!</p>
+                                
                             </div>
                         </div>
                     </div>
 
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="img/team/02.jpg" alt="..." class="img-circle team-img">
+                            <a href="{% url 'heroes:hero_list' %}">    <img src="{% static 'img/icons/wonder-woman.png' %}" alt="..." class="img-circle team-img"> </a>
                             <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                                <h3>Heroes List</h3>
+                                <p>You can find all of the registered heroes on this page.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                          <div class="item">
+                        <div class="thumbnail">
+                            <a href="{% url 'missions:mission_signup' %}"> <img src="{% static 'img/icons/missions.png' %}" alt="..." class="img-circle team-img"></a>
+                            <div class="caption">
+                                <h3>Missions Log</h3>
+                                <p>The Missions Log is where you create new missions requested by the customers.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="item">
                         <div class="thumbnail">
-                            <img src="{% static 'img/team/03.jpg' %}" alt="..." class="img-circle team-img">
+                            <a href="{% url 'trainings:class_signup' %}"><img src="{% static 'img/icons/classes.png' %}" alt="..." class="img-circle team-img"> </a>
                             <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                                <h3>Classes Log</h3>
+                                <p>Register a new class for the heroes to participate in.</p>
                             </div>
                         </div>
                     </div>
-
-                    <div class="item">
+                    
+                     <div class="item">
                         <div class="thumbnail">
-                            <img src="img/team/04.jpg" alt="..." class="img-circle team-img">
+                            <a href = "{% url 'heroes:team_signup' %}"><img src="{% static 'img/icons/team.png' %}" alt="..." class="img-circle team-img"></a>
                             <div class="caption">
-                                <h3>Jenn Gwapa</h3>
-                                <p>CEO / Founder</p>
-                                <p>Do not seek to change what has come before. Seek to create that which has not.</p>
+                                <h3>Team Signup</h3>
+                                <p>This is where you can register you superhero team.</p>
+                                
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+</div>
+                   
+              
 {% endblock %}
