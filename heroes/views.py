@@ -166,4 +166,3 @@ class TeamDeleteView(DeleteView):
     template_name = 'team_confirm_delete.html'
     model = Team
     success_url = '/heroes/team_list'
-    
