@@ -127,6 +127,8 @@ font-weight: 900;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
 	color: #cfcfcf;
+    height: 50%;
+
 }
 
 #tf-home .overlay{
