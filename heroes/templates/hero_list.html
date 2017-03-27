@@ -3,10 +3,10 @@
 {% load staticfiles %}
 
 {% block content %}
-
+<div class = "content">
 <h1> Hero List</h1>
 
-<div>
+
     {% for hero in heroes %}
     <p>
         <a href="/heroes/profile/{{hero.id}}/">{{ hero.codename }}</a>
@@ -16,4 +16,9 @@
     {% endfor %}
 </div>
 
+<style type="text/css">
+  padding-top {
+    20px;
+  }
+</style>
 {% endblock %}
