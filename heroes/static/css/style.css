@@ -13,7 +13,11 @@ body, html{
 }
 
 .container {
+ HEAD
 padding-top: 20px;    
+
+padding-top: 1200px;    
+1e09a5088c1e8304ee56502a347ce04fd271c059
 }
 
 h1{
@@ -126,7 +130,7 @@ font-weight: 900;
 /* Home Style */
 #tf-home{
 	background: url(../img/01.jpg);
-	background-size: cover;
+	
 	background-position: center;
 	background-attachment: fixed;
 	background-repeat: no-repeat;
