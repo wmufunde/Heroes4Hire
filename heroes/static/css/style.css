@@ -12,6 +12,10 @@ body, html{
     padding-top: 20px;
 }
 
+.container {
+padding-top: 20px;    
+}
+
 h1{
 	text-transform: uppercase;
 }
