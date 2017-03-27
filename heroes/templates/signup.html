@@ -18,7 +18,7 @@
 {%endblock %}
 {% block content %}
  
-
+<div class = "content">
 <h1> Hero Form</h1>
 
 <form action="{% url 'heroes:heroes_signup' %}" method="post" enctype="multipart/form-data">
@@ -51,6 +51,6 @@
 
     <input type="submit" value="Submit"/>
 </form>
-
+</div>
 
 {% endblock %}

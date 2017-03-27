@@ -4,6 +4,8 @@
 
 {% block content %}
 
+<div class = "content">
+
 <h1> Attendance Form</h1>
 
 <form action="{% url 'trainings:attendance_signup' %}" method="post" enctype="multipart/form-data">
@@ -13,4 +15,6 @@
 
     <input type="submit" value="Submit"/>
 </form>
+
+</div>
 {% endblock %}

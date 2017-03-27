@@ -4,7 +4,7 @@
 
 {% block content %}
 
-
+<div class = "content">
 <h1>{{ object.codename }}</h1>
 {% if object.profilePic %}
 <img src={{ object.profilePic.url }} />
@@ -42,5 +42,5 @@
 
 <a href="{% url 'heroes:pic_update' object.id %}">Update Pic</a>
 
-
+</div>
 {% endblock %}
